@@ -22,9 +22,34 @@ function Location (geoData) {
     this.longitude = geoData[0].lon;
 }
 
-server.use('*',(req,res)=>{
-    res.status(500).send('route not found')
+server.get('/weather', (req, res)=> {
+    const weatherData = require('./data/weather.json');
+    let weather= [] ;
+    weatherData.data.forEach( val=>{
+        const weatherObj = new Weather(val);
+       
+        weather.push(weatherObj) ;       
+    })
+    
+    res.send(weather);
+
 })
+ 
+function Weather (weaData) {
+    this.weather = weaData.weather.description;
+    this.time= weaData.datetime;
+
+}
+
+
+function errors(){
+server.use('*',(req,res)=>{
+    res.status(500).send('Sorry, something went wrong')
+})
+}
+errors();
+
+
 
 server.listen(PORT, ()=>{
     console.log(`Listening on PORT ${PORT}`);
