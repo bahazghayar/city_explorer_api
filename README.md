@@ -7,7 +7,7 @@
 **Version**: 
 * 1.0.0 getting data from local file.
 * 2.0.0 getting data from API server.
-
+* 2.0.1 edits.
 
 ## Overview
 You can search about the locations, weather, parks, yelp, and movies in this application.
