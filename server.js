@@ -19,8 +19,8 @@ const PORT = process.env.PORT || 3030;
 
 
 //   pg is a package , and Client is a predefined constructor. 
-const client = new pg.Client(process.env.DATABASE_URL);
-// const client = new pg.Client({ connectionString: process.env.DATABASE_URL,   ssl: { rejectUnauthorized: false } });
+// const client = new pg.Client(process.env.DATABASE_URL);
+const client = new pg.Client({ connectionString: process.env.DATABASE_URL,   ssl: { rejectUnauthorized: false } });
 
 // Routes Definitions
 server.get('/', handleHomeRoute);
