@@ -116,7 +116,7 @@ function Location (city , geoData) {
 }
 
 function Weather (weaData) {
-    this.weather = weaData.weather.description;
+    this.forecast = weaData.weather.description;
     this.time= weaData.datetime;
 
 }
@@ -124,9 +124,9 @@ function Weather (weaData) {
 function Parks (parkData){
    this.name = parkData.fullName ; 
    this.address  = `${parkData.addresses[0].line1} ${parkData.addresses[0].city} ${parkData.addresses[0].stateCode} ${parkData.addresses[0].postalCode}` ; 
-  this.fee = '0.00' ; 
+    this.fee = '0.00' ; 
     // this.fee = parkData.entranceFees[0].cost ; 
-   this.discreption = parkData.description ;
+   this.description = parkData.description ;
    this.url = parkData.url ;
 
 }
