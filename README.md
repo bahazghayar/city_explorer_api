@@ -1,6 +1,6 @@
 # city_explorer_api
 
-**Author**: Baha zghayar
+**Author**: Baha Zghayar
 
 <br>
 
@@ -8,6 +8,7 @@
 * 1.0.0 getting data from local file.
 * 2.0.0 getting data from API server.
 * 2.0.1 edits.
+* 3.0.0 Persistence with a SQL Database.
 
 ## Overview
 You can search about the locations, weather, parks, yelp, and movies in this application.
@@ -22,7 +23,7 @@ Node.js and express.js
 
 
 ## Change Log
-Lab 06: 
+### Lab 06: 
 21-02-2021 3:40 pm - Application now has a fully-functional express server, with a GET route for the location and the weather resource.
 
 Feature 1: Locations
@@ -55,7 +56,7 @@ Finish time: 3:40 pm
 
 Actual time needed to complete: 10 min
 
-Lab 07: 
+### Lab 07: 
 
 22-02-2021 10:00 pm - Application now has a fully-functional express server, with a GET route for the location / weather / parks resource.
 
@@ -95,3 +96,37 @@ Actual time needed to complete: 50 min
 Zaid Alasfar 
 
 we worked on the function of the weather and the parks together.
+
+
+### Lab 08: 
+23-02-2021 10:11 pm - Application now has a fully-functional express server, with a GET route for the location, weather and parks resource, and connected to the database.
+
+Feature 1: Database
+
+Estimate of time needed to complete: 1 hour and a half.
+
+Start time: 3:00 pm  
+
+Finish time: 5:00 pm
+
+Actual time needed to complete: 2 hours.
+
+Feature 2: Server
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 7:50 pm
+
+Finish time: 10:00 pm
+
+Actual time needed to complete: 2 hours and 10 min
+
+Feature 3: Deploy 
+
+Estimate of time needed to complete: 10 min
+
+Start time: 10:15 pm
+
+Finish time: 10:30 pm 
+
+Actual time needed to complete: 15 min
