@@ -19,8 +19,8 @@ const PORT = process.env.PORT || 3030;
 
 
 //   pg is a package , and Client is a predefined constructor. 
-// const client = new pg.Client(process.env.DATABASE_URL);
-const client = new pg.Client({ connectionString: process.env.DATABASE_URL,   ssl: { rejectUnauthorized: false } });
+const client = new pg.Client(process.env.DATABASE_URL);
+// const client = new pg.Client({ connectionString: process.env.DATABASE_URL,   ssl: { rejectUnauthorized: false } });
 
 // Routes Definitions
 server.get('/', handleHomeRoute);
@@ -51,21 +51,19 @@ function locationHandler(req, res) {
     //    console.log(result);
         cityArr =  result.rows.map(val => { return val.search_query ;  })
         // console.log('hiiiiiiiiiiiiiiii ' ,cityArr.includes(cityName));
-        // console.log(cityArr);
-    })
-    
-    //  IMPOOOORTANT: if doesn't working i don't know why. 
-    if (cityArr.includes(cityName)) {
-            console.log('i am in if');
+        // console.log('i am in queryyyyyyyyyy',cityArr);
+
+        if (cityArr.includes(cityName)) {
+            // console.log('i am in if');
             let SQL3 = `SELECT * FROM locations WHERE search_query = '${cityName}';` ;
             client.query(SQL3) 
             .then((result)=> {
                 // console.log(result.rows[0]);
-
+             console.log('data added from database');
               res.send(result.rows[0]) ;
             })
     } else {
-        console.log('i am in else');
+        console.log('i am going to API');
         superagent.get(url)
         .then(locData => {
             // console.log(locData.body) ;
@@ -93,7 +91,7 @@ function locationHandler(req, res) {
             errorHandler('Error in getting data from locationiq', req, res)
         })
     }
-    
+    })
 }
 
 function weatherHandler(req, res) {
@@ -193,5 +191,5 @@ client.connect()
         );
     })
     .catch((error) => {
-        res.send('error form connecting between express and postgres', error.message)
+        console.log('error form connecting between express and postgres', error.message)
     })
